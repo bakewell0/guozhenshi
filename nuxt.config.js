@@ -15,8 +15,16 @@ module.exports = {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/guo.ico' },
       { rel: 'stylesheet', href: '/css/common.css' }
+    ],
+    script: [
+     	{src: 'https://hm.baidu.com/hm.js?52eb6578ee12ac37771f1af16e482611'},/*引入百度统计的js*/
     ]
   },
+  
+  plugins: [
+   '~plugins/ga.js',/*百度统计*/
+	],
+  
   /*
   ** Customize the progress bar color
   */
