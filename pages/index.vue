@@ -17,9 +17,9 @@
 					<li>
 						<a href="javascript:;">手机果园</a>
 					</li>
-					<li>
-						<a href="javascript:;"><img src="../assets/img/t1.png" />15821179197</a>
-					</li>
+					<!--<li>
+						<a href="javascript:;"><img src="../assets/img/t1.png" />400-720-0770</a>
+					</li>-->
 				</ul>
 			</div>
 		</div>
@@ -77,7 +77,7 @@
 					</li>
 				</ul>
 				<div class="shopping_card rf">
-					<a href="javascript:;"><img src="../assets/img/t3.png" />购物车</a href="javascript:;">
+					<a href="javascript:;"><img src="../assets/img/t3.png">购物车</a href="javascript:;">
 				</div>
 				<ul class="fruits" style="display: none;">
 					<li>
@@ -119,14 +119,14 @@
 		</div>
 		<!-- 限时抢购 -->
 		<ul class="rush_buy cf w1000">
-			<li v-for="product in products">
-				<img :src="product.pic_url" alt="" style="width: 235px;height: 235px;">
-				<h1 class="raw_title" :title="product.raw_title">{{product.raw_title}}</h1>
-				<h2>{{product.item_loc}}</h2>
+			<li v-for="(product,index) in products" :key="index">
+				<img :src="product.photo" alt="" style="width: 235px;height: 235px;">
+				<h1 class="raw_title" :title="product.raw_title">{{product.product_name}}</h1>
+				<h2>{{product.origin}}</h2>
 				<span style="display: none;">02小时35分26秒</span>
-				<p>￥{{product.view_price}} <i>5斤</i><em style="display: none;">原价46.00</em></p>
+				<p>￥{{product.price}} <i>5斤</i><em style="display: none;">原价46.00</em></p>
 				<div class="buy_butt cf">
-					<i class="lf">{{product.view_sales}}</i>
+					<i class="lf">{{product.sales}}</i>
 					<button class="rf">立即抢购</button>
 				</div>
 			</li>
@@ -139,8 +139,8 @@
 			</div>
 		</div>
 		<ul class="cf discount_lists w1000">
-			<li v-for="hot in hotList">
-				<img :src="hot.photo" style="width: 235px;height: 228px;"/>
+			<li v-for="(hot,index) in hotList" :key="index">
+				<img :src="hot.photo" style="width: 235px;height: 228px;" />
 				<h1>{{hot.product_name}}</h1>
 				<i class="product_desc">{{hot.product_desc}}</i>
 				<h2>￥{{hot.old_price}} <i>{{hot.volume}}</i></h2>
@@ -157,8 +157,8 @@
 		</div>
 		<div class="fru2">
 			<ul class="fru w1000 cf">
-				<li v-for="gift in giftList">
-					<img :src="gift.photo" style="width: 186px;height:186px;"/>
+				<li v-for="(gift,index) in giftList" :key="index">
+					<img :src="gift.photo" style="width: 186px;height:186px;" />
 					<div class="fru_posi">
 						<h1>{{gift.product_name}}</h1>
 						<p class="over_text">{{gift.product_desc}}</p>
@@ -277,8 +277,9 @@
 					</li>
 				</ul>
 				<div class="erwem lf">
-					<img src="../assets/img/t15.jpg" style="height: 100px;margin-bottom: 10px;"/>
-					<p><!--客服电话：15821179197<br />-->地址：浙江省绍兴市上虞区</p>
+					<img src="../assets/img/t15.jpg" style="height: 100px;margin-bottom: 10px;" />
+					<p>
+						<!--客服电话：15821179197<br />-->地址：浙江省绍兴市上虞区</p>
 				</div>
 			</div>
 		</div>
@@ -292,54 +293,40 @@
 <script>
 	import axios from 'axios';
 	axios.defaults.baseURL = 'http://www.guozhenshi.cn:5000/';
-	
+
 	export default {
-		data(){
+		data() {
 			return {
-				products:[],
-				hotList:[],
-				giftList:[]
+				products: [],
+				hotList: [],
+				giftList: []
 			}
 		},
-		methods:{
-			getProducts(){
-				var that = this;
-				axios.get("products").then(function(response) {
-					that.products = response.data.products
-				})
-			},
-			getHotList(){
-				var that = this;
-				axios.get("hotList").then(function(response) {
-					that.hotList = response.data.hotList
-				})
-			},
-			getGiftList(){
-				var that = this;
-				axios.get("giftList").then(function(response) {
-					that.giftList = response.data.giftList
-				})
+		async asyncData(context) {
+			let products = await axios.get("recList");
+			let hotList = await axios.get("hotList");
+			let giftList = await axios.get("giftList");
+			return {
+					products: products.data,
+					hotList: hotList.data,
+					giftList: giftList.data
 			}
-		},
-		created(){
-			this.getProducts();
-			this.getHotList();
-			this.getGiftList();
 		}
 	}
 </script>
 
 <style>
-	.raw_title{
+	.raw_title {
 		overflow: hidden;
-	    text-overflow: ellipsis;
-	    white-space: nowrap;
+		text-overflow: ellipsis;
+		white-space: nowrap;
 	}
-	.product_desc{
+	
+	.product_desc {
 		font-size: 12px;
-	    color: #aaaaaa;
-	    margin-bottom: 10px;
-	    display: block;
-	    margin-left: 16px;
+		color: #aaaaaa;
+		margin-bottom: 10px;
+		display: block;
+		margin-left: 16px;
 	}
 </style>
