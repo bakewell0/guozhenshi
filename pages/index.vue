@@ -302,6 +302,15 @@
 				giftList: []
 			}
 		},
+		head(){
+	      	return{
+	        	title:"果真是 - 是！我爱吃",
+	        	meta:[
+	          		{name:'keywords',content:'果真是网，水果网，水果拼盘，水果礼盒，鲜果网，水果配送'},
+	          		{name:'description',content:'果真是网是专业的生鲜水果食品网络购物平台，提供水果网购，水果配送，生鲜食品配送服务，享尽新鲜美味'}	          		
+	        	]
+	      	}
+	   	},
 		async asyncData(context) {
 			let products = await axios.get("recList");
 			let hotList = await axios.get("hotList");
