@@ -41,8 +41,8 @@
 						<a href="javascript:;">柠檬</a>
 					</span>
 						<div class="search_inp">
-							<input type="text" placeholder="台湾青芒" class="lf">
-							<a href="javascript:;" class="lf">搜索</a>
+							<input type="text" placeholder="台湾青芒" class="lf" v-model="productname">						
+							<nuxt-link :to="'/productlist?productname='+productname" style="display: inline-block;">搜索</nuxt-link>
 							<img src="../assets/img/in2.png" />
 						</div>
 					</div>
@@ -119,6 +119,13 @@
 </template>
 
 <script>
+	export default {
+		data() {
+			return {
+				productname: ""
+			}
+		}
+	}
 </script>
 
 <style>
