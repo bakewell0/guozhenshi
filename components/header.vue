@@ -58,15 +58,15 @@
 		<div class="nav">
 			<div class="nav2 w1000 cf">
 				<ul class="lf nav_left cf">
-					<li><i>全部商品</i></li>
 					<li>
-						<a href="javascript:;">首页</a>
+						<nuxt-link to='/'>
+							首页
+						</nuxt-link>
 					</li>
 					<li>
-						<a href="javascript:;">进口鲜果</a>
-					</li>
-					<li>
-						<a href="javascript:;">国产鲜果</a>
+						<nuxt-link to='/productlist'>
+							水果列表
+						</nuxt-link>
 					</li>
 					<li>
 						<a href="javascript:;">在线充值</a>
