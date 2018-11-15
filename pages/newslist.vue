@@ -5,33 +5,14 @@
 		<div class="line">
 		</div>
 		<ul class="newsList">
-			<li>
-				<img src="http://image.guo68.com/ueditor/image/20180920/1537435835393399.jpg" alt=""/>
-				<div class="newsDes">
-					<div class="title">秋季最适合吃的6种时令水果</div>
-					<div class="abstract">秋季最适合吃的6种时令水果</div>
-				</div>
-			</li>
-			<li>
-				<img src="http://image.guo68.com/ueditor/image/20180920/1537436016616441.jpg" alt=""/>
-				<div class="newsDes">
-					<div class="title">季节特色第三代水果</div>
-					<div class="abstract">天然产品 过季无售!</div>
-				</div>
-			</li>
-			<li>
-				<img src="http://image.guo68.com/ueditor/image/20180920/1537436450563340.jpg" alt=""/>
-				<div class="newsDes">
-					<div class="title">杏树如何灌水？杏树盛花期、采果后等六个时期的灌水要点</div>
-					<div class="abstract">栽种杏树如何灌水？在种植杏树的过程中，灌水也是非常重要的环节之一。杏树在一年生活周期中有6个时期需要灌水，分别是早春发芽前灌大水、盛花期灌水、果实膨大期灌水、采果后灌水、秋后灌水、封冻水，接下来小编就</div>
-				</div>
-			</li>
-			<li>
-				<img src="http://image.guo68.com/ueditor/image/20180920/1537437303822364.jpg" alt=""/>
-				<div class="newsDes">
-					<div class="title">甜樱桃如何实现高产种植？甜樱桃高产栽培主要技术措施</div>
-					<div class="abstract">甜樱桃是很受消费者喜欢的水果，其营养价值高，而且对生长环境要求高，目前在我国的主产区是北方，那么甜樱桃如何实现高产种植呢？下面小编就分大家分享甜樱桃高产栽培秘诀</div>
-				</div>
+			<li v-for="news in newsList">
+				<nuxt-link :to="'/news?newsid='+news.id">
+					<img :src="news.photo" alt=""/>
+					<div class="newsDes">
+						<div class="title">{{news.news_name}}</div>
+						<div class="abstract">{{news.abstract}}</div>
+					</div>
+				</nuxt-link>
 			</li>
 		</ul>
 		<v-footer></v-footer>
@@ -61,10 +42,10 @@
 	      	}
 	   	},
 		async asyncData(context) {
-//			let newsList = await axios.get("newsList");
-//			return {
-//					newsList: newsList.data
-//			}
+			let newsList = await axios.get("newsList");
+			return {
+					newsList: newsList.data
+			}
 		}
 	}
 </script>
@@ -114,6 +95,7 @@
 	}
 	.newsDes .title{
 		line-height: 20px;
+		color: #000;
 	}
 	.newsDes .abstract{
 		color:#6d6d6d;
