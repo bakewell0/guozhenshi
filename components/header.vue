@@ -69,7 +69,9 @@
 						</nuxt-link>
 					</li>
 					<li>
-						<a href="javascript:;">在线充值</a>
+						<nuxt-link to='/newslist'>
+							行业资讯
+						</nuxt-link>
 					</li>
 					<li>
 						<a href="javascript:;">团购配送</a>
