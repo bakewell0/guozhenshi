@@ -6,7 +6,7 @@
 			<div class="shop_left2 lf cf" style="border-right: none;">
 				<div class="all_fenlei cf">
 					<span class="lf">所有分类 ></span>
-					<div class="rf shaixuan">收起筛选 <img src="../assets/img/shang.png" width="8" style="margin-top: 3px;" /></div>
+					<!--<div class="rf shaixuan">收起筛选 <img src="../assets/img/shang.png" width="8" style="margin-top: 3px;" /></div>-->
 				</div>
 				<ul class="shop_select">
 					<li class="cf">
@@ -20,7 +20,6 @@
 						<span>墨鱼干</span>
 						<span>虾类制品</span>
 						<span>贝类制品</span>
-						<span>更多 <img src="../assets/img/xia.png" width="8" /></span>
 					</li>
 					<li class="cf">
 						<span>零食/坚果/特产：</span>
@@ -29,7 +28,6 @@
 						<span>虾系类</span>
 					</li>
 					<li class="cf">
-						<i>多选</i>
 						<span>食品工艺：</span>
 						<span>水产干货</span>
 						<span>鲜活水产</span>
@@ -138,20 +136,12 @@
 	      	}
 	   	},
 		async asyncData(context) {
-			console.log(context.query.productname)
 			let productList = await axios.get("productList?productname="+encodeURIComponent(context.query.productname));
 			return {
 					productList: productList.data
 			}
 		},
-		methods:{
-			async getproductList(){
-				let productList = await axios.get("productList");
-				return {
-						productList: productList.data
-				}
-			}
-		}
+		watchQuery: ['productname']
 	}
 </script>
 

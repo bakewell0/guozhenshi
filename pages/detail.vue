@@ -79,7 +79,7 @@
 				<!--累积评价-->
 				<ul class="shop_xq2 cf">
 					<li>商品详情<img src="../assets/img/de6.jpg" /></li>
-					<li>累积评价<i>46766</i></li>
+					<!--<li>累积评价<i>46766</i></li>-->
 				</ul>
 				<div class="shop_num" style="display: none;">
 					<img src="../assets/img/de7.jpg" alt="" />
@@ -99,12 +99,12 @@
 				</div>
 				<!--生产日期-->
 				<!--详情图片-->
-				<div class="shop_images">
+				<!--<div class="shop_images">
 					<img src="../assets/img/de10.jpg" alt="" />
 					<img src="../assets/img/de11.jpg" alt="" />
 					<img src="../assets/img/de12.jpg" alt="" />
 					<img src="../assets/img/de13.jpg" alt="" />
-				</div>
+				</div>-->
 			</div>
 			<div class="shop_right rf">
 				<div class="tit_img">
