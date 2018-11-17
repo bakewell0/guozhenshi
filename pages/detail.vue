@@ -158,7 +158,7 @@
 		},
 		head() {
 			return {
-				title: this.productDetail.product_name+"_水果列表 _果真是 - 是！我爱吃",
+				title: this.productDetail.product_name+"_水果分类 _果真是 - 是！我爱吃",
 				meta: [{
 						name: 'keywords',
 						content: ''

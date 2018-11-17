@@ -128,7 +128,7 @@
 		},
 		head(){
 	      	return{
-	        	title:"水果列表 _果真是 - 是！我爱吃",
+	        	title:"水果分类 _果真是 - 是！我爱吃",
 	        	meta:[
 	          		{name:'keywords',content:''},
 	          		{name:'description',content:''}	          		
