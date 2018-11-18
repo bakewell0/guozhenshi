@@ -140,7 +140,7 @@
 			let productList = await axios.get("productList?productname="+encodeURIComponent(context.query.productname));
 			return {
 					productList: productList.data,
-					productname:context.query.productname
+					productname:context.query.productname || "水果分类"
 			}
 		},
 		watchQuery: ['productname']
