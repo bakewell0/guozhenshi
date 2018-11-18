@@ -123,22 +123,24 @@
 		},
 		data() {
 			return {
-				productList: []
+				productList: [],
+				productname:""
 			}
 		},
 		head(){
 	      	return{
-	        	title:"水果分类 _果真是 - 是！我爱吃",
+	        	title:this.productname+"_果真是 - 是！我爱吃",
 	        	meta:[
-	          		{name:'keywords',content:''},
-	          		{name:'description',content:''}	          		
+	          		{name:'keywords',content:this.productname},
+	          		{name:'description',content:'果真是网是专业的水果网络购物平台，在这里您可以购买到精心挑选的优质健康'+this.productname+'，最新价格、优惠促销等信息尽在果真是网guozhenshi.cn'}	          		
 	        	]
 	      	}
 	   	},
 		async asyncData(context) {
 			let productList = await axios.get("productList?productname="+encodeURIComponent(context.query.productname));
 			return {
-					productList: productList.data
+					productList: productList.data,
+					productname:context.query.productname
 			}
 		},
 		watchQuery: ['productname']
