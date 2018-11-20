@@ -62,8 +62,8 @@ module.exports = {
 				var data = [];
 				var productList = await axios.get('http://www.guozhenshi.cn:5000/productList?productname=');
 				var newsList = await axios.get('http://www.guozhenshi.cn:5000/newsList')
-				var p = productList.data.map(product => data.push('/detail?productid=' + product.id));
-				var n = newsList.data.map(news =>  data.push('/news?newsid=' + news.id));
+				productList.data.map(product => data.push('/detail?productid=' + product.id));
+				newsList.data.map(news =>  data.push('/news?newsid=' + news.id));
 				return data;
     }
   }
