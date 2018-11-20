@@ -33,7 +33,16 @@
 		},
 		head() {
 			return {
-				title: this.news.news_name+"_行业资讯_果真是 - 是！我爱吃"
+				title: this.news.news_name+"_行业资讯_果真是 - 是！我爱吃",
+				meta: [{
+						name: 'keywords',
+						content: this.news.news_name
+					},
+					{
+						name: 'description',
+						content: "想了解"+this.news.news_name+",请选择果真是资讯，更多新鲜事等你看!"
+					}
+				]
 			}
 		},
 		async asyncData(context) {

@@ -65,7 +65,7 @@
 					</li>
 					<li>
 						<nuxt-link to='/productlist'>
-							水果列表
+							水果分类
 						</nuxt-link>
 					</li>
 					<li>
@@ -74,10 +74,10 @@
 						</nuxt-link>
 					</li>
 					<li>
-						<a href="javascript:;">团购配送</a>
+						<a href="javascript:;">农家乐</a>
 					</li>
 					<li>
-						<a href="javascript:;">其他</a>
+						<a href="javascript:;">社区</a>
 					</li>
 				</ul>
 				<div class="shopping_card rf">

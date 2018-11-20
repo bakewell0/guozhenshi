@@ -31,10 +31,10 @@
 								<i class="lf" style="padding-top: 4px;">促销价</i>
 								<span class="lf" style="font-size: 15px; font-weight: bold; color: #c40000;">￥<em>{{ productDetail.price }}</em></span>
 							</div>
-							<div class="shop_puile cf">
+							<!--<div class="shop_puile cf">
 								<i class="lf">本店活动</i>
 								<span class="lf" style="font-size: 14px; color: #b5621b;">{{ productDetail.activity }}</span>
-							</div>
+							</div>-->
 							<div class="shop_puile cf">
 								<i class="lf">原产地</i>
 								<span class="lf" style="font-size: 14px; color: #b5621b;">{{ productDetail.origin }}</span>
@@ -67,13 +67,8 @@
 						</div>-->
 						<ul class="qrcode cf">
 							<li class="lf">电话咨询</li>
-							<li class="rf"><img src="../assets/img/de5.jpg" />微信咨询</li>
-						</ul>
-						
-						<div style="margin: 20px auto;font-size: 12px;text-align: right;">
-							浏览次数：{{productDetail.scan}}
-						</div>
-						
+							<li class="rf"><!--<img src="../assets/img/de5.jpg" />-->微信咨询</li>
+						</ul>											
 					</div>
 				</div>
 				<!--累积评价-->
@@ -107,8 +102,8 @@
 				</div>-->
 			</div>
 			<div class="shop_right rf">
-				<div class="tit_img">
-					<img src="../assets/img/de14.jpg" alt="" />
+				<div class="tit_img" style="text-align: center;">
+					—— 热卖水果 ——
 				</div>
 				<ul class="shop_see">
 					<li v-for="hot in hotList">
@@ -116,21 +111,6 @@
 						<img :src="hot.photo" alt="" style="width: 232px;height: 232px;"/>
 						<h1>{{hot.product_name}}</h1>
 					</li>
-					<!--<li>
-						<span>￥16.90</span>
-						<img src="../assets/img/de15.jpg" alt="" />
-						<h1>海参肉海参肉海参肉海参肉海参肉</h1>
-					</li>
-					<li>
-						<span>￥16.90</span>
-						<img src="../assets/img/de15.jpg" alt="" />
-						<h1>海参肉海参肉海参肉海参肉海参肉</h1>
-					</li>
-					<li>
-						<span>￥16.90</span>
-						<img src="../assets/img/de15.jpg" alt="" />
-						<h1>海参肉海参肉海参肉海参肉海参肉</h1>
-					</li>-->
 				</ul>
 			</div>
 		</div>
@@ -158,10 +138,10 @@
 		},
 		head() {
 			return {
-				title: this.productDetail.product_name+"_水果列表 _果真是 - 是！我爱吃",
+				title: this.productDetail.product_name+"_水果分类 _果真是 - 是！我爱吃",
 				meta: [{
 						name: 'keywords',
-						content: ''
+						content: this.productDetail.product_name
 					},
 					{
 						name: 'description',
@@ -666,7 +646,6 @@
 	
 	.qrcode {
 		width: 370px;
-		margin: auto;
 	}
 	
 	.qrcode li {
@@ -678,6 +657,7 @@
 		background: #ffeded;
 		padding: 12px 0;
 		border: 1px solid #c40000;
+		cursor: pointer;
 	}
 	
 	.qrcode li:nth-child(2) {
