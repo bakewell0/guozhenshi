@@ -56,7 +56,8 @@ module.exports = {
     generate: false, // Enable me when using nuxt generate
     exclude: [
       '/detail',
-      '/news'
+      '/news',
+      '/productlist?productname='
     ],
     async routes () {
 				var data = [];
