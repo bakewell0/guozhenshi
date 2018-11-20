@@ -1,3 +1,4 @@
+import axios from 'axios';
 module.exports = {
   /*
   ** Headers of the page
@@ -45,6 +46,26 @@ module.exports = {
 //      })
 //    }
 //  }
+ },
+ modules: [ '@nuxtjs/sitemap'],
+ sitemap: {
+ 	 	path: '/sitemap.xml',
+    hostname: 'http://www.guozhenshi.cn/',
+    cacheTime: 1000 * 60 * 15,
+    gzip: true,
+    generate: false, // Enable me when using nuxt generate
+    exclude: [
+      '/detail',
+      '/news'
+    ],
+    async routes () {
+				var data = [];
+				var productList = await axios.get('http://www.guozhenshi.cn:5000/productList?productname=');
+				var newsList = await axios.get('http://www.guozhenshi.cn:5000/newsList')
+				var p = productList.data.map(product => data.push('/detail?productid=' + product.id));
+				var n = newsList.data.map(news =>  data.push('/news?newsid=' + news.id));
+				return data;
+    }
   }
 }
 
