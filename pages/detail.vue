@@ -155,7 +155,7 @@
 			let hotList = await axios.get("hotList");
 			return {
 				productDetail: productDetail.data[0],
-				hotList: hotList.data.slice(0,4)
+				hotList: hotList.data.slice(0,5)
 			}
 		},
 		methods: {
