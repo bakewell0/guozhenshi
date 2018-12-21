@@ -9,7 +9,7 @@
 		<ul class="rush_buy cf w1000">
 			<li v-for="(product,index) in recList" :key="index">
 				<nuxt-link :to="'/detail?productid='+product.id">
-					<img :src="product.photo" alt="" style="width: 235px;height: 235px;">
+					<img :src="product.photo" :alt="product.product_name" style="width: 235px;height: 235px;">
 					<h1 class="raw_title" :title="product.raw_title">{{product.product_name}}</h1>
 					<h2>{{product.origin}}</h2>
 					<span style="display: none;">02小时35分26秒</span>
@@ -31,7 +31,7 @@
 		<ul class="cf discount_lists w1000">
 			<li v-for="(hot,index) in hotList" :key="index">
 				<nuxt-link :to="'/detail?productid='+hot.id">
-					<img :src="hot.photo" style="width: 235px;height: 228px;" />
+					<img :src="hot.photo" style="width: 235px;height: 228px;" :alt="hot.product_name"/>
 					<h1>{{hot.product_name}}</h1>
 					<i class="product_desc">{{hot.product_desc}}</i>
 					<h2>￥{{hot.old_price}} <i>{{hot.volume}}</i></h2>
@@ -51,7 +51,7 @@
 			<ul class="fru w1000 cf">
 				<li v-for="(gift,index) in giftList" :key="index">
 					<nuxt-link :to="'/detail?productid='+gift.id">
-					<img :src="gift.photo" style="width: 186px;height:186px;" />
+					<img :src="gift.photo" style="width: 186px;height:186px;" :alt="gift.product_name"/>
 					<div class="fru_posi">
 						<h1>{{gift.product_name}}</h1>
 						<p class="over_text">{{gift.product_desc}}</p>

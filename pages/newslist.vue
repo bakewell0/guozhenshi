@@ -7,7 +7,7 @@
 		<ul class="newsList">
 			<li v-for="news in newsList">
 				<nuxt-link :to="'/news?newsid='+news.id">
-					<img :src="news.photo" alt=""/>
+					<img :src="news.photo" :alt="news.news_name"/>
 					<div class="newsDes">
 						<div class="title">{{news.news_name}}</div>
 						<div class="abstract">{{news.abstract}}</div>

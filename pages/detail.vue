@@ -9,7 +9,7 @@
 					<div class="shop_xq lf">
 						<div class="shop_image">
 							<div class="shop_big_img">
-								<img :src="productDetail.photo" style="width: 418px;height: 418px;"/>
+								<img :src="productDetail.photo" style="width: 418px;height: 418px;" :alt="productDetail.product_name"/>
 							</div>
 							<!--<ul class="shop_xiaotu">
 								<li v-for="(shop, shopkey) in imgs" :key="shopkey">

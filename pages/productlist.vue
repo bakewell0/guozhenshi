@@ -52,7 +52,7 @@
 				<ul class="shop_list_biao cf">
 					<li v-for="product in productList">
 						<nuxt-link :to="'/detail?productid='+product.id">
-						<div><img :src="product.photo" style="width:100%;height: 232px;"/></div>
+						<div><img :src="product.photo" style="width:100%;height: 232px;" :alt="product.product_name"/></div>
 						<div class="shop_price_fukuan">
 							<div class="cf shop_price_fukuan2">
 								<span class="lf">￥{{product.price}} <i>包邮</i></span>
