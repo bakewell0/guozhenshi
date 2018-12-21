@@ -107,9 +107,11 @@
 				</div>
 				<ul class="shop_see">
 					<li v-for="hot in hotList">
+						<nuxt-link :to="'/detail?productid='+hot.id">
 						<span>￥{{hot.price}}</span>
 						<img :src="hot.photo" alt="" style="width: 232px;height: 232px;"/>
 						<h1>{{hot.product_name}}</h1>
+						</nuxt-link>
 					</li>
 				</ul>
 			</div>
@@ -163,7 +165,8 @@
 		},
 		created() {
 			
-		}
+		},
+		watchQuery: ['productid']
 	}
 </script>
 

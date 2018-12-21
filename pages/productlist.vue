@@ -74,33 +74,14 @@
 					<span>掌柜热卖</span>
 				</div>
 				<ul class="shop_see listzhanggui">
-					<li>
-						<img src="img/t15.jpg" alt="" />
+					<li v-for="product in productList.slice(0,5)">
+						<nuxt-link :to="'/detail?productid='+product.id">
+						<img :src="product.photo" alt="" style="width: 100%;"/>
 						<div class="cf jiage">
-							<i class="lf">￥168.00</i>
-							<em class="rf">销量3239</em>
+							<i class="lf">￥{{product.price}}</i>
+							<em class="rf">销量{{product.sales}}</em>
 						</div>
-					</li>
-					<li>
-						<img src="img/t15.jpg" alt="" />
-						<div class="cf jiage">
-							<i class="lf">￥168.00</i>
-							<em class="rf">销量3239</em>
-						</div>
-					</li>
-					<li>
-						<img src="img/t15.jpg" alt="" />
-						<div class="cf jiage">
-							<i class="lf">￥168.00</i>
-							<em class="rf">销量3239</em>
-						</div>
-					</li>
-					<li>
-						<img src="img/t15.jpg" alt="" />
-						<div class="cf jiage">
-							<i class="lf">￥168.00</i>
-							<em class="rf">销量3239</em>
-						</div>
+						</nuxt-link>
 					</li>
 				</ul>
 			</div>
